@@ -8,6 +8,7 @@ RUN tar -xzf /Downloads/master.tar.gz && \
     npm i --ignore-scripts && \
     npm cache clean --force && \
     adduser --disabled-password --gecos "dhtCrawler" --home /dhtCrawler --no-create-home dhtCrawler
+RUN   sed -i "s|localhost|mongodb|g" /dhtCrawler/config.js
 
 WORKDIR /dhtCrawler
 
